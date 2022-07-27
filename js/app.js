@@ -1,15 +1,21 @@
-//------- Get form input and autopopulate email ---------------//
+//-----  Music Player  -------//
+var music = document.getElementById("alienAudio");
+const play = document.querySelector('fa-volume-high');
+const pause = document.querySelector('fa-volume-xmark');
 
-var subject = document.getElementById("subject").value;
-var body = document.getElementById("comment").value;
+function toggleMusic() {
+  music.volume = 0.1;
+  return music.paused ? music.play() : music.pause();
+};
 
-function createMail(subject, body) {
-    var mailTo = `mailto:subject=${subject}&body=${body}`;
-    document.getElementById('btn').addEventListener('click', function() {
-        window.location.href = mailTo;
-        document.getElementById("form").reset();
-      });
+//-----  Play/Pause Icon Toggle  -------//
+function toggleIcon() {
+    if (music.paused) {
+        document.getElementById('musicPause').style.display = 'none';
+        document.getElementById('musicPlay').style.display = 'block';
+    } else {
+        document.getElementById('musicPause').style.display = 'block';
+        document.getElementById('musicPlay').style.display = 'none';
+    }
 }
-
-
 

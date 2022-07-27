@@ -100,6 +100,15 @@ form{
 .svg{
   filter: white !important;
 }
+
+#musicPause{
+  display: none;
+}
+@media (max-width: 767px){
+  .fa-circle-play, .fa-circle-pause {
+    display: none !important;
+  }
+}
 @media (min-width: 768px){
   .logo-link {
     margin-bottom: 50px;   
@@ -112,6 +121,36 @@ form{
     width: 100px !important;
     height: 100px !important;
   }
+  /* ------------------------------- Show/Hide Icon --------------------------------------//
+  /* Container needed to position the overlay. Adjust the width as needed */
+  .alien-container {
+    position: relative;
+    height: 100%;
+  }
+
+  a{
+    text-decoration: none !important;
+  }
+  .fa-circle-play, .fa-circle-pause {
+    color: rgb(124, 68, 191);
+    width: 60px !important;
+    height: 60px !important;
+  }
+  /* When you move the mouse over the icon, change color */
+  .fa-circle-play:hover, .fa-circle-pause:hover  {
+    color: black;
+    cursor: pointer;
+  }
+
+  /* The icon inside the overlay is positioned in the middle vertically and horizontally */
+  .icon {
+    position: absolute;
+    top: 17.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
 }
 @media (min-width: 1024px) {
   .title-name{
@@ -121,3 +160,4 @@ form{
     font-size: 30px;
   }
 }
+
